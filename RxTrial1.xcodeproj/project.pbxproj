@@ -582,6 +582,7 @@
 				DEVELOPMENT_TEAM = F8F8U34YY3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RxTrial1/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Translator;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -609,6 +610,7 @@
 				DEVELOPMENT_TEAM = F8F8U34YY3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RxTrial1/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Translator;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
