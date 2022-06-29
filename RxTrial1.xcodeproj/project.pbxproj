@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B58FB910286BEFCC00894BAF /* TranslatorViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB90F286BEFCC00894BAF /* TranslatorViewModelTest.swift */; };
+		B58FB917286C04EC00894BAF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB916286C04EC00894BAF /* MainTabBarController.swift */; };
+		B58FB91A286C062300894BAF /* BKArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB919286C062300894BAF /* BKArchiveViewController.swift */; };
 		B5FFBEBA2868A86600A26655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBEB92868A86600A26655 /* AppDelegate.swift */; };
 		B5FFBEBC2868A86600A26655 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBEBB2868A86600A26655 /* SceneDelegate.swift */; };
 		B5FFBEC32868A86800A26655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5FFBEC22868A86800A26655 /* Assets.xcassets */; };
@@ -25,9 +27,9 @@
 		B5FFBF042869562600A26655 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBF032869562600A26655 /* ApiKeys.swift */; };
 		B5FFBF06286956B600A26655 /* PapagoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBF05286956B600A26655 /* PapagoResponse.swift */; };
 		B5FFBF08286956F100A26655 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBF07286956F100A26655 /* Language.swift */; };
-		B5FFBF0B28695EBA00A26655 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBF0A28695EBA00A26655 /* TranslatorViewController.swift */; };
+		B5FFBF0B28695EBA00A26655 /* BKNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBF0A28695EBA00A26655 /* BKNewViewController.swift */; };
 		B5FFBF0E28695EDF00A26655 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5FFBF0D28695EDF00A26655 /* SnapKit */; };
-		B5FFBF1028696DBA00A26655 /* TranslatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBF0F28696DBA00A26655 /* TranslatorViewModel.swift */; };
+		B5FFBF1028696DBA00A26655 /* BKNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBF0F28696DBA00A26655 /* BKNewViewModel.swift */; };
 		B5FFBF122869729900A26655 /* BKFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBF112869729900A26655 /* BKFactory.swift */; };
 		B5FFBF142869991400A26655 /* HeaderTitleSubtitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBF132869991400A26655 /* HeaderTitleSubtitleCellViewModel.swift */; };
 		B5FFBF172869993A00A26655 /* HeaderTitleSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBF162869993A00A26655 /* HeaderTitleSubtitleCell.swift */; };
@@ -61,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		B58FB90F286BEFCC00894BAF /* TranslatorViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewModelTest.swift; sourceTree = "<group>"; };
+		B58FB916286C04EC00894BAF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B58FB919286C062300894BAF /* BKArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKArchiveViewController.swift; sourceTree = "<group>"; };
 		B5FFBEB62868A86600A26655 /* RxTrial1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTrial1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FFBEB92868A86600A26655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5FFBEBB2868A86600A26655 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,8 +82,8 @@
 		B5FFBF032869562600A26655 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		B5FFBF05286956B600A26655 /* PapagoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoResponse.swift; sourceTree = "<group>"; };
 		B5FFBF07286956F100A26655 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
-		B5FFBF0A28695EBA00A26655 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
-		B5FFBF0F28696DBA00A26655 /* TranslatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewModel.swift; sourceTree = "<group>"; };
+		B5FFBF0A28695EBA00A26655 /* BKNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKNewViewController.swift; sourceTree = "<group>"; };
+		B5FFBF0F28696DBA00A26655 /* BKNewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKNewViewModel.swift; sourceTree = "<group>"; };
 		B5FFBF112869729900A26655 /* BKFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKFactory.swift; sourceTree = "<group>"; };
 		B5FFBF132869991400A26655 /* HeaderTitleSubtitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleSubtitleCellViewModel.swift; sourceTree = "<group>"; };
 		B5FFBF162869993A00A26655 /* HeaderTitleSubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleSubtitleCell.swift; sourceTree = "<group>"; };
@@ -169,9 +173,24 @@
 			isa = PBXGroup;
 			children = (
 				B5FFBEC22868A86800A26655 /* Assets.xcassets */,
-				B5FFBEC72868A86800A26655 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B58FB915286C04C400894BAF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B58FB916286C04EC00894BAF /* MainTabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B58FB918286C060A00894BAF /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				B58FB919286C062300894BAF /* BKArchiveViewController.swift */,
+			);
+			path = Archive;
 			sourceTree = "<group>";
 		};
 		B5FFBEAD2868A86600A26655 = {
@@ -196,8 +215,11 @@
 		B5FFBEB82868A86600A26655 /* RxTrial1 */ = {
 			isa = PBXGroup;
 			children = (
+				B58FB918286C060A00894BAF /* Archive */,
+				B58FB915286C04C400894BAF /* Main */,
+				B5FFBF0928695EAB00A26655 /* New */,
 				B58FB912286C033600894BAF /* Others */,
-				B5FFBF0928695EAB00A26655 /* Translator */,
+				B5FFBEC72868A86800A26655 /* Info.plist */,
 			);
 			path = RxTrial1;
 			sourceTree = "<group>";
@@ -247,14 +269,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		B5FFBF0928695EAB00A26655 /* Translator */ = {
+		B5FFBF0928695EAB00A26655 /* New */ = {
 			isa = PBXGroup;
 			children = (
-				B5FFBF0A28695EBA00A26655 /* TranslatorViewController.swift */,
-				B5FFBF0F28696DBA00A26655 /* TranslatorViewModel.swift */,
+				B5FFBF0A28695EBA00A26655 /* BKNewViewController.swift */,
+				B5FFBF0F28696DBA00A26655 /* BKNewViewModel.swift */,
 				B5FFBF202869F2A900A26655 /* ScriptTranslationEditorView.swift */,
 			);
-			path = Translator;
+			path = New;
 			sourceTree = "<group>";
 		};
 		B5FFBF222869F35300A26655 /* Components */ = {
@@ -410,7 +432,8 @@
 			files = (
 				B5FFBF212869F2A900A26655 /* ScriptTranslationEditorView.swift in Sources */,
 				B5FFBEFB2868B23600A26655 /* GoogleResponse.swift in Sources */,
-				B5FFBF0B28695EBA00A26655 /* TranslatorViewController.swift in Sources */,
+				B58FB917286C04EC00894BAF /* MainTabBarController.swift in Sources */,
+				B5FFBF0B28695EBA00A26655 /* BKNewViewController.swift in Sources */,
 				B5FFBF06286956B600A26655 /* PapagoResponse.swift in Sources */,
 				B5FFBF1B2869B1FB00A26655 /* MetaTranslation.swift in Sources */,
 				B5FFBF262869F40200A26655 /* LightButton.swift in Sources */,
@@ -427,10 +450,11 @@
 				B5FFBEFD2868B80400A26655 /* KakaoResponse.swift in Sources */,
 				B5FFBF1D2869B82700A26655 /* Engine.swift in Sources */,
 				B5FFBF1F2869BF7900A26655 /* Extensions.swift in Sources */,
+				B58FB91A286C062300894BAF /* BKArchiveViewController.swift in Sources */,
 				B5FFBF1928699CEC00A26655 /* TranslatorService.swift in Sources */,
 				B5FFBF08286956F100A26655 /* Language.swift in Sources */,
 				B5FFBF2A286A078A00A26655 /* Sentence.swift in Sources */,
-				B5FFBF1028696DBA00A26655 /* TranslatorViewModel.swift in Sources */,
+				B5FFBF1028696DBA00A26655 /* BKNewViewModel.swift in Sources */,
 				B5FFBF122869729900A26655 /* BKFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

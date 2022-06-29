@@ -9,21 +9,21 @@ import Foundation
 import RxSwift
 import RxRelay
 
-protocol TranslatorViewProtocol: AnyObject {
+protocol BKNewViewProtocol: AnyObject {
     var showProgress: PublishSubject<Bool> { get }
     var showErrorMessage: PublishSubject<String> { get }
 }
 
-protocol TranslatorViewModelProtocol {
-    var view: TranslatorViewProtocol? { get set }
+protocol BKNewViewModelProtocol {
+    var view: BKNewViewProtocol? { get set }
     var searchResults: BehaviorRelay<[HeaderTitleSubtitleCellViewModel]> { get }
     var savedSentences: BehaviorRelay<[Sentence]> { get }
     var searchText: String? { get set }
     func search(text: String)
 }
 
-class TranslatorViewModel: TranslatorViewModelProtocol {
-    weak var view: TranslatorViewProtocol?
+class BKNewViewModel: BKNewViewModelProtocol {
+    weak var view: BKNewViewProtocol?
     let model: TranslatorServiceProtocol
     let disposeBag = DisposeBag()
     

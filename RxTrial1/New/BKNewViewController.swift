@@ -10,9 +10,9 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class TranslatorViewController: UIViewController, TranslatorViewProtocol {
+class BKNewViewController: UIViewController, BKNewViewProtocol {
     let disposeBag = DisposeBag()
-    var viewModel: TranslatorViewModelProtocol
+    var viewModel: BKNewViewModelProtocol
     
     var showErrorMessage: PublishSubject<String> = PublishSubject()
     var showProgress: PublishSubject<Bool> = PublishSubject()
@@ -123,7 +123,7 @@ class TranslatorViewController: UIViewController, TranslatorViewProtocol {
     }
     
     //MARK: init
-    init(viewModel: TranslatorViewModelProtocol) {
+    init(viewModel: BKNewViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

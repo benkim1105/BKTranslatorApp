@@ -26,7 +26,7 @@ class TranslatorViewModelTest: XCTestCase {
         api.mockPapago = mockPapago
         api.mockKakao = mockKakao
         let model = TranslatorService(api: api)
-        let viewModel = TranslatorViewModel(model: model)
+        let viewModel = BKNewViewModel(model: model)
         
         let exp = XCTestExpectation()
         //when

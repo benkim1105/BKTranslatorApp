@@ -17,9 +17,9 @@ class BKFactory {
         api = API(networkService: networkService)
     }
     
-    func translatorViewModel() -> TranslatorViewModel {
+    func translatorViewModel() -> BKNewViewModel {
         let model = TranslatorService(api: api)
-        let viewModel = TranslatorViewModel(model: model)
+        let viewModel = BKNewViewModel(model: model)
         return viewModel
     }
 }

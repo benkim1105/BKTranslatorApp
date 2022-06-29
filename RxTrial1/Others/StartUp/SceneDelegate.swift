@@ -15,12 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        let viewModel = BKFactory.shared.translatorViewModel()
-        let translatorVC = TranslatorViewController(viewModel: viewModel)
-        translatorVC.navigationItem.largeTitleDisplayMode = .always
-        let naviVC = UINavigationController(rootViewController: translatorVC)
-        naviVC.navigationBar.prefersLargeTitles = true
-        window?.rootViewController = naviVC
+        
+        let mainVC = MainTabBarController()
+        window?.rootViewController = mainVC
         window?.makeKeyAndVisible()
     }
 
