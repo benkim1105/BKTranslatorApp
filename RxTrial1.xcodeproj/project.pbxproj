@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B58FB910286BEFCC00894BAF /* TranslatorViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB90F286BEFCC00894BAF /* TranslatorViewModelTest.swift */; };
-		B58FB917286C04EC00894BAF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB916286C04EC00894BAF /* MainTabBarController.swift */; };
+		B58FB917286C04EC00894BAF /* BKMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB916286C04EC00894BAF /* BKMainTabBarController.swift */; };
 		B58FB91A286C062300894BAF /* BKArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB919286C062300894BAF /* BKArchiveViewController.swift */; };
+		B58FB91D286C0A4E00894BAF /* BKSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB91C286C0A4E00894BAF /* BKSaveViewController.swift */; };
+		B58FB91F286C25B800894BAF /* BKSaveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB91E286C25B800894BAF /* BKSaveViewModel.swift */; };
+		B58FB921286C281700894BAF /* DevViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB920286C281700894BAF /* DevViewController.swift */; };
 		B5FFBEBA2868A86600A26655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBEB92868A86600A26655 /* AppDelegate.swift */; };
 		B5FFBEBC2868A86600A26655 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBEBB2868A86600A26655 /* SceneDelegate.swift */; };
 		B5FFBEC32868A86800A26655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5FFBEC22868A86800A26655 /* Assets.xcassets */; };
@@ -63,8 +66,11 @@
 
 /* Begin PBXFileReference section */
 		B58FB90F286BEFCC00894BAF /* TranslatorViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewModelTest.swift; sourceTree = "<group>"; };
-		B58FB916286C04EC00894BAF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B58FB916286C04EC00894BAF /* BKMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMainTabBarController.swift; sourceTree = "<group>"; };
 		B58FB919286C062300894BAF /* BKArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKArchiveViewController.swift; sourceTree = "<group>"; };
+		B58FB91C286C0A4E00894BAF /* BKSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKSaveViewController.swift; sourceTree = "<group>"; };
+		B58FB91E286C25B800894BAF /* BKSaveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKSaveViewModel.swift; sourceTree = "<group>"; };
+		B58FB920286C281700894BAF /* DevViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevViewController.swift; sourceTree = "<group>"; };
 		B5FFBEB62868A86600A26655 /* RxTrial1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTrial1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FFBEB92868A86600A26655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5FFBEBB2868A86600A26655 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,7 +186,7 @@
 		B58FB915286C04C400894BAF /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B58FB916286C04EC00894BAF /* MainTabBarController.swift */,
+				B58FB916286C04EC00894BAF /* BKMainTabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -191,6 +197,15 @@
 				B58FB919286C062300894BAF /* BKArchiveViewController.swift */,
 			);
 			path = Archive;
+			sourceTree = "<group>";
+		};
+		B58FB91B286C0A3F00894BAF /* Save */ = {
+			isa = PBXGroup;
+			children = (
+				B58FB91C286C0A4E00894BAF /* BKSaveViewController.swift */,
+				B58FB91E286C25B800894BAF /* BKSaveViewModel.swift */,
+			);
+			path = Save;
 			sourceTree = "<group>";
 		};
 		B5FFBEAD2868A86600A26655 = {
@@ -220,6 +235,7 @@
 				B5FFBF0928695EAB00A26655 /* New */,
 				B58FB912286C033600894BAF /* Others */,
 				B5FFBEC72868A86800A26655 /* Info.plist */,
+				B58FB920286C281700894BAF /* DevViewController.swift */,
 			);
 			path = RxTrial1;
 			sourceTree = "<group>";
@@ -272,6 +288,7 @@
 		B5FFBF0928695EAB00A26655 /* New */ = {
 			isa = PBXGroup;
 			children = (
+				B58FB91B286C0A3F00894BAF /* Save */,
 				B5FFBF0A28695EBA00A26655 /* BKNewViewController.swift */,
 				B5FFBF0F28696DBA00A26655 /* BKNewViewModel.swift */,
 				B5FFBF202869F2A900A26655 /* ScriptTranslationEditorView.swift */,
@@ -432,15 +449,18 @@
 			files = (
 				B5FFBF212869F2A900A26655 /* ScriptTranslationEditorView.swift in Sources */,
 				B5FFBEFB2868B23600A26655 /* GoogleResponse.swift in Sources */,
-				B58FB917286C04EC00894BAF /* MainTabBarController.swift in Sources */,
+				B58FB917286C04EC00894BAF /* BKMainTabBarController.swift in Sources */,
+				B58FB91D286C0A4E00894BAF /* BKSaveViewController.swift in Sources */,
 				B5FFBF0B28695EBA00A26655 /* BKNewViewController.swift in Sources */,
 				B5FFBF06286956B600A26655 /* PapagoResponse.swift in Sources */,
 				B5FFBF1B2869B1FB00A26655 /* MetaTranslation.swift in Sources */,
 				B5FFBF262869F40200A26655 /* LightButton.swift in Sources */,
 				B5FFBF042869562600A26655 /* ApiKeys.swift in Sources */,
+				B58FB921286C281700894BAF /* DevViewController.swift in Sources */,
 				B5FFBEBA2868A86600A26655 /* AppDelegate.swift in Sources */,
 				B5FFBEFF2868BDC400A26655 /* Translation.swift in Sources */,
 				B5FFBF28286A066200A26655 /* HapticManager.swift in Sources */,
+				B58FB91F286C25B800894BAF /* BKSaveViewModel.swift in Sources */,
 				B5FFBEF32868AA5A00A26655 /* NetworkService.swift in Sources */,
 				B5FFBEBC2868A86600A26655 /* SceneDelegate.swift in Sources */,
 				B5FFBF142869991400A26655 /* HeaderTitleSubtitleCellViewModel.swift in Sources */,

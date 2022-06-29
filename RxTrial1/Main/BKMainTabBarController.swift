@@ -7,21 +7,24 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class BKMainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         var viewControllers: [UIViewController] = []
         
-        let viewModel = BKFactory.shared.translatorViewModel()
+        let viewModel = BKFactory.shared.newViewModel()
         let translatorVC = BKNewViewController(viewModel: viewModel)
         let translatorNaviVC = UINavigationController(rootViewController: translatorVC)
-        translatorNaviVC.tabBarItem = UITabBarItem(title: "new", image: UIImage(systemName: "square.and.pencil"), tag: 0)
+        translatorNaviVC.tabBarItem = UITabBarItem(title: "New", image: UIImage(systemName: "square.and.pencil"), tag: 0)
         
-        
+        let archiveVC = BKArchiveViewController()
+        let archiveNaviVC = UINavigationController(rootViewController: archiveVC)
+        archiveNaviVC.tabBarItem = UITabBarItem(title: "Archive", image: UIImage(systemName: "archivebox"), tag: 1)
         
         viewControllers.append(translatorNaviVC)
+        viewControllers.append(archiveNaviVC)
         
         setViewControllers(viewControllers, animated: false)
         

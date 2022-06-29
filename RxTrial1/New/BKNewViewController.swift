@@ -20,6 +20,8 @@ class BKNewViewController: UIViewController, BKNewViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        let todo = "savedSentences 수정, 삭제"
         
         configUI()
         viewModel.view = self
@@ -49,6 +51,10 @@ class BKNewViewController: UIViewController, BKNewViewProtocol {
         
         viewModel.searchResults.subscribe(onNext: { results in
             self.noSearchResult.isHidden = !results.isEmpty
+        })
+        .disposed(by: disposeBag)
+        viewModel.savedSentences.subscribe(onNext: { sentences in
+            self.saveButton.isEnabled = !sentences.isEmpty
         })
         .disposed(by: disposeBag)
         
@@ -120,6 +126,11 @@ class BKNewViewController: UIViewController, BKNewViewProtocol {
             self.textEditor.text = ""
         }
         .disposed(by: disposeBag)
+        
+        saveButton.rx.tap.bind { _ in
+            let todo = "여기서 저장하기"
+            print("저장하기")
+        }
     }
     
     //MARK: init
@@ -133,6 +144,16 @@ class BKNewViewController: UIViewController, BKNewViewProtocol {
     }
     
     //MARK: UI
+    var saveButton: UIBarButtonItem = {
+        let view = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .done,
+            target: nil,
+            action: nil)
+        
+        return view
+    }()
+    
     var textEditor: UITextView = {
         let view = UITextView()
         view.backgroundColor = .systemBackground
@@ -181,7 +202,10 @@ class BKNewViewController: UIViewController, BKNewViewProtocol {
     
     //MARK: configUI
     private func configUI() {
-        title = "Translator"
+        title = "New"
+
+        navigationItem.rightBarButtonItem = saveButton
+        
         view.backgroundColor = .secondarySystemBackground
         view.addSubview(textEditor)
         view.addSubview(searchButton)
