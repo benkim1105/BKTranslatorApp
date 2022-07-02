@@ -24,7 +24,8 @@ class BKFactory {
     }
     
     func saveViewModel(sentences: [Sentence]) -> BKSaveViewModel {
-        let viewModel = BKSaveViewModel(sentences: sentences)
+        let model = BKSaveModel(api: api)
+        let viewModel = BKSaveViewModel(sentences: sentences, model: model)
         return viewModel
     }
 }

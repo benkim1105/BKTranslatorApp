@@ -8,12 +8,19 @@
 import Foundation
 import RxSwift
 
+enum APIError: Error {
+    case invalidParameter
+    case internalError
+}
+
 protocol APIProtocol {
     func searchGoogle(text: String, source: Language, target: Language) -> Observable<GoogleResponse>
     
     func searchKakao(text: String, source: Language, target: Language) -> Observable<KakaoResponse>
     
     func searchPapago(text: String, source: Language, target: Language) -> Observable<PapagoResponse>
+    
+    func tts(id: String, text: String, language: Language, voiceName: VoiceName) -> Observable<Data>
 }
 
 class API: APIProtocol {
@@ -21,6 +28,14 @@ class API: APIProtocol {
     
     init(networkService: NetworkServiceProtocol) {
         self.networkService = networkService
+    }
+    
+    func tts(id: String, text: String, language: Language, voiceName: VoiceName) -> Observable<Data> {
+        let base = "http://192.168.0.19:8080"
+        let urlString = base + "/api/tts"
+        let params = ["id": id, "text": text, "voiceName": voiceName.rawValue, "language": language.languageCountry()]
+        
+        return networkService.executeData(urlString, method: "POST", params: params, headers: [:])
     }
     
     func searchGoogle(text: String, source: Language, target: Language) -> Observable<GoogleResponse> {

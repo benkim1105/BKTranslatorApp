@@ -22,4 +22,13 @@ enum Language: String {
             return self.rawValue
         }
     }
+    
+    func languageCountry() -> String {
+        switch self {
+        case .en:
+            return "en-US"
+        case .ko:
+            return "ko-KR"
+        }
+    }
 }

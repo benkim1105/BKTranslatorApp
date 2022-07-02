@@ -19,9 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let devVC = DevViewController()
         let mainVC = UINavigationController(rootViewController: devVC)
         
-        let todo = "주석 제거"
 //        let mainVC = BKMainTabBarController()
-        
         
         window?.rootViewController = mainVC
         window?.makeKeyAndVisible()
