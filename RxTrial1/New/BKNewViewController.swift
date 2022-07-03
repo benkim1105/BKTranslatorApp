@@ -43,7 +43,7 @@ class BKNewViewController: UIViewController, BKNewViewProtocol {
             
             cell.configure(with: HeaderTitleSubtitleCellViewModel(
                 header: "",
-                title: viewModel.script,
+                title: viewModel.sentence,
                 subtitle: viewModel.translation
             ))
         }
@@ -111,12 +111,12 @@ class BKNewViewController: UIViewController, BKNewViewProtocol {
             let script = self.translationEditor.scriptView.text.trimmingCharacters(in: .whitespaces)
             let translation = self.translationEditor.translationView.text.trimmingCharacters(in: .whitespaces)
             guard !translation.isEmpty, !script.isEmpty else {
-                HapticManager.shared.warning()
+                BKHapticService.shared.warning()
                 return
             }
             
             let todo = "여기 language 값을 어디선가 받아야 한다."
-            let sentence = Sentence(script: script, translation: translation, scriptLanguage: .ko, translationLanguage: .en)
+            let sentence = BKSentence(sentence: script, translation: translation, sentenceLanguage: .ko, translationLanguage: .en)
             
             self.viewModel.savedSentences.accept(self.viewModel.savedSentences.value + [sentence])
          

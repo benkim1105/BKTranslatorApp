@@ -25,7 +25,7 @@ protocol NetworkServiceProtocol {
     ) -> Observable<Data>
 }
 
-class NetworkService: NetworkServiceProtocol {
+class BKNetworkService: NetworkServiceProtocol {
     
     func execute<T: Decodable>(
         _ url: String,

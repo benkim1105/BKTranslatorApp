@@ -17,7 +17,7 @@ protocol BKNewViewProtocol: AnyObject {
 protocol BKNewViewModelProtocol {
     var view: BKNewViewProtocol? { get set }
     var searchResults: BehaviorRelay<[HeaderTitleSubtitleCellViewModel]> { get }
-    var savedSentences: BehaviorRelay<[Sentence]> { get }
+    var savedSentences: BehaviorRelay<[BKSentence]> { get }
     var searchText: String? { get set }
     func search(text: String)
 }
@@ -29,7 +29,7 @@ class BKNewViewModel: BKNewViewModelProtocol {
     
     var searchText: String? = nil
     var searchResults: BehaviorRelay<[HeaderTitleSubtitleCellViewModel]> = BehaviorRelay(value: [])
-    var savedSentences: BehaviorRelay<[Sentence]> = BehaviorRelay(value: [])
+    var savedSentences: BehaviorRelay<[BKSentence]> = BehaviorRelay(value: [])
     
     
     init(model: TranslatorServiceProtocol) {

@@ -29,10 +29,10 @@ protocol TranslatorServiceProtocol {
     func searchTranslationAll(text: String) -> Observable<MetaTranslation>
 }
 
-class TranslatorService: TranslatorServiceProtocol {
-    let api: APIProtocol
+class BKTranslatorService: TranslatorServiceProtocol {
+    let api: TranslatorAPIProtocol
     
-    init(api: APIProtocol) {
+    init(api: TranslatorAPIProtocol) {
         self.api = api
     }
     

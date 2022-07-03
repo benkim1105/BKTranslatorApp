@@ -22,7 +22,7 @@ struct DevViewModel {
         }))
         
         rows.append(RowItem(title: "Save", action: { vc in
-            let sentences = [Sentence(script: "Nice to meet you", translation: "만나서 반갑습니다.", scriptLanguage: .en, translationLanguage: .ko)]
+            let sentences = [BKSentence(sentence: "Nice to meet you", translation: "만나서 반갑습니다.", sentenceLanguage: .en, translationLanguage: .ko)]
             let viewModel = BKFactory.shared.saveViewModel(sentences: sentences)
             let saveVC = BKSaveViewController(viewModel: viewModel)
             vc.navigationController?.pushViewController(saveVC, animated: true)

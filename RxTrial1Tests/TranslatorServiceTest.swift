@@ -22,8 +22,8 @@ class TranslatorServiceTest: XCTestCase {
         
         let networkService = MockNetworkService()
         networkService.mockResult = mockResult
-        let api = API(networkService: networkService)
-        let translationService = TranslatorService(api: api)
+        let api = TranslatorAPI(networkService: networkService)
+        let translationService = BKTranslatorService(api: api)
         let text = "만나서 반갑습니다."
 
         let exp = XCTestExpectation()
@@ -55,6 +55,10 @@ class TranslatorServiceTest: XCTestCase {
         func execute<T>(_ url: String, method: String, params: [String : String], headers: [String : String]) -> Observable<T> where T : Decodable {
             Call.stack.append("api")
             return Observable.just(mockResult as! T)
+        }
+
+        func executeData(_ url: String, method: String, params: [String: String], headers: [String: String]) -> Observable<Data> {
+            fatalError("executeData(_:method:params:headers:) has not been implemented")
         }
     }
 }

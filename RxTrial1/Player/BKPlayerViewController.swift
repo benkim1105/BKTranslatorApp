@@ -14,12 +14,12 @@ class BKPlayerViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .yellow
 
-        try? AVAudioSession.sharedInstance().setCategory(.playback)
-
-        let mp3Directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("mp3")
-        let fileURL = mp3Directory.appendingPathComponent("A8EB41AB-70A2-4BE2-94D7-14FF45101B51.mp3")
-        print(fileURL)
-        player = AVPlayer(url: fileURL)
-        player?.play()
+//        try? AVAudioSession.sharedInstance().setCategory(.playback)
+//
+//        let mp3Directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("mp3")
+//        let fileURL = mp3Directory.appendingPathComponent("A8EB41AB-70A2-4BE2-94D7-14FF45101B51.mp3")
+//        print(fileURL)
+//        player = AVPlayer(url: fileURL)
+//        player?.play()
     }
 }

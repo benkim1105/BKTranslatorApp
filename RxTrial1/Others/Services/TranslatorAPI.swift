@@ -13,7 +13,7 @@ enum APIError: Error {
     case internalError
 }
 
-protocol APIProtocol {
+protocol TranslatorAPIProtocol {
     func searchGoogle(text: String, source: Language, target: Language) -> Observable<GoogleResponse>
     
     func searchKakao(text: String, source: Language, target: Language) -> Observable<KakaoResponse>
@@ -23,7 +23,7 @@ protocol APIProtocol {
     func tts(id: String, text: String, language: Language, voiceName: VoiceName) -> Observable<Data>
 }
 
-class API: APIProtocol {
+class TranslatorAPI: TranslatorAPIProtocol {
     let networkService: NetworkServiceProtocol
     
     init(networkService: NetworkServiceProtocol) {
@@ -31,7 +31,7 @@ class API: APIProtocol {
     }
     
     func tts(id: String, text: String, language: Language, voiceName: VoiceName) -> Observable<Data> {
-        let base = "http://192.168.0.19:8080"
+        let base = "http://192.168.0.48:8080"
         let urlString = base + "/api/tts"
         let params = ["id": id, "text": text, "voiceName": voiceName.rawValue, "language": language.languageCountry()]
         
