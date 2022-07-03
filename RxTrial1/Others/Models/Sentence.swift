@@ -7,19 +7,25 @@
 
 import Foundation
 
-struct Sentence {
+struct BKSentence: Codable {
     let id: String?
-    let script: String
+    let bookId: String?
+    let sentence: String
     let translation: String
-    let scriptLanguage: Language
+    let sentenceLanguage: Language
     let translationLanguage: Language
-    
+    let timestamp: Date?
+    let serverId: String?
 
-    internal init(id: String? = UUID().uuidString, script: String, translation: String, scriptLanguage: Language, translationLanguage: Language) {
+    internal init(id: String? = UUID().uuidString, bookId: String? = nil, sentence: String, translation: String, sentenceLanguage: Language, translationLanguage: Language, timestamp: Date? = nil, serverId: String? = nil) {
         self.id = id
-        self.script = script
+        self.bookId = bookId
+        self.sentence = sentence
         self.translation = translation
-        self.scriptLanguage = scriptLanguage
+        self.sentenceLanguage = sentenceLanguage
         self.translationLanguage = translationLanguage
+        self.timestamp = timestamp
+        self.serverId = serverId
     }
 }
+

@@ -25,7 +25,7 @@ class TranslatorViewModelTest: XCTestCase {
         api.mockGoogle = mockGoogle
         api.mockPapago = mockPapago
         api.mockKakao = mockKakao
-        let model = TranslatorService(api: api)
+        let model = BKTranslatorService(api: api)
         let viewModel = BKNewViewModel(model: model)
         
         let exp = XCTestExpectation()
@@ -51,7 +51,7 @@ class TranslatorViewModelTest: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
     
-    class MockApi: APIProtocol {
+    class MockApi: TranslatorAPIProtocol {
         var mockGoogle: GoogleResponse?
         var mockKakao: KakaoResponse?
         var mockPapago: PapagoResponse?
@@ -69,6 +69,10 @@ class TranslatorViewModelTest: XCTestCase {
         func searchPapago(text: String, source: Language, target: Language) -> Observable<PapagoResponse> {
             Call.stack.append("searchPapago")
             return Observable.just(mockPapago!)
+        }
+
+        func tts(id: String, text: String, language: Language, voiceName: VoiceName) -> Observable<Data> {
+            fatalError("tts(id:text:language:voiceName:) has not been implemented")
         }
     }
 }

@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class HapticManager {
-    static let shared = HapticManager()
+class BKHapticService {
+    static let shared = BKHapticService()
     
     let generator: UINotificationFeedbackGenerator
     
