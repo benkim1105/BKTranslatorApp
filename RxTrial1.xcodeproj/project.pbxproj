@@ -17,10 +17,10 @@
 		B51BBDBA2871E5B7002702A0 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B51BBDB92871E5B7002702A0 /* RxRelay */; };
 		B51BBDBC2871E5B7002702A0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B51BBDBB2871E5B7002702A0 /* RxSwift */; };
 		B51BBDBE2872064A002702A0 /* BKRemoteFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51BBDBD2872064A002702A0 /* BKRemoteFileService.swift */; };
+		B51BBDC428721499002702A0 /* translatordata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B51BBDC228721499002702A0 /* translatordata.xcdatamodeld */; };
 		B565B3C128703275007A6B0C /* BKEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565B3C028703275007A6B0C /* BKEpisode.swift */; };
 		B565B3C3287035E9007A6B0C /* BKDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565B3C2287035E9007A6B0C /* BKDataService.swift */; };
 		B565B3C5287039BD007A6B0C /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565B3C4287039BD007A6B0C /* RemoteImage.swift */; };
-		B565B3C828704B31007A6B0C /* translator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B565B3C628704B31007A6B0C /* translator.xcdatamodeld */; };
 		B565B3CC2871D3B7007A6B0C /* BKDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B565B3CB2871D3B7007A6B0C /* BKDataServiceTest.swift */; };
 		B58FB910286BEFCC00894BAF /* TranslatorViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB90F286BEFCC00894BAF /* TranslatorViewModelTest.swift */; };
 		B58FB917286C04EC00894BAF /* BKMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58FB916286C04EC00894BAF /* BKMainTabBarController.swift */; };
@@ -83,10 +83,10 @@
 		17C8B823B64C4ED52AD4D0FF /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		17C8BA636344691CBB69F0AC /* BKLocalFileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKLocalFileService.swift; sourceTree = "<group>"; };
 		B51BBDBD2872064A002702A0 /* BKRemoteFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKRemoteFileService.swift; sourceTree = "<group>"; };
+		B51BBDC328721499002702A0 /* translatordata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = translatordata.xcdatamodel; sourceTree = "<group>"; };
 		B565B3C028703275007A6B0C /* BKEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKEpisode.swift; sourceTree = "<group>"; };
 		B565B3C2287035E9007A6B0C /* BKDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKDataService.swift; sourceTree = "<group>"; };
 		B565B3C4287039BD007A6B0C /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
-		B565B3C728704B31007A6B0C /* translator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = translator.xcdatamodel; sourceTree = "<group>"; };
 		B565B3CB2871D3B7007A6B0C /* BKDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKDataServiceTest.swift; sourceTree = "<group>"; };
 		B58FB90F286BEFCC00894BAF /* TranslatorViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewModelTest.swift; sourceTree = "<group>"; };
 		B58FB916286C04EC00894BAF /* BKMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKMainTabBarController.swift; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				B5FFBEC22868A86800A26655 /* Assets.xcassets */,
-				B565B3C628704B31007A6B0C /* translator.xcdatamodeld */,
+				B51BBDC228721499002702A0 /* translatordata.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -527,6 +527,7 @@
 				B5FFBF0B28695EBA00A26655 /* BKNewViewController.swift in Sources */,
 				B5FFBF06286956B600A26655 /* PapagoResponse.swift in Sources */,
 				B5FFBF1B2869B1FB00A26655 /* MetaTranslation.swift in Sources */,
+				B51BBDC428721499002702A0 /* translatordata.xcdatamodeld in Sources */,
 				B5FFBF262869F40200A26655 /* LightButton.swift in Sources */,
 				B5FFBF042869562600A26655 /* ApiKeys.swift in Sources */,
 				B565B3C3287035E9007A6B0C /* BKDataService.swift in Sources */,
@@ -542,7 +543,6 @@
 				B5FFBF242869F36200A26655 /* PrimaryButton.swift in Sources */,
 				B5FFBEF82868B1D300A26655 /* TranslatorAPI.swift in Sources */,
 				B58FB92E286CB96B00894BAF /* BKPlayerViewController.swift in Sources */,
-				B565B3C828704B31007A6B0C /* translator.xcdatamodeld in Sources */,
 				B5FFBF172869993A00A26655 /* HeaderTitleSubtitleCell.swift in Sources */,
 				B5FFBEFD2868B80400A26655 /* KakaoResponse.swift in Sources */,
 				B5FFBF1D2869B82700A26655 /* Engine.swift in Sources */,
@@ -949,13 +949,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		B565B3C628704B31007A6B0C /* translator.xcdatamodeld */ = {
+		B51BBDC228721499002702A0 /* translatordata.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B565B3C728704B31007A6B0C /* translator.xcdatamodel */,
+				B51BBDC328721499002702A0 /* translatordata.xcdatamodel */,
 			);
-			currentVersion = B565B3C728704B31007A6B0C /* translator.xcdatamodel */;
-			path = translator.xcdatamodeld;
+			currentVersion = B51BBDC328721499002702A0 /* translatordata.xcdatamodel */;
+			path = translatordata.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
