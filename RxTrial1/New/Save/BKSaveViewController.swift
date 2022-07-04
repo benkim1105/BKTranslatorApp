@@ -32,7 +32,7 @@ class BKSaveViewController: UITableViewController, BKSaveViewProtocol, UIImagePi
     }
 
     func onSaveCompletion() {
-        complain(message: "저장완료!")
+        confirm(message: "저장완료!")
         
         let todo = "저장 후 화면 이동"
     }

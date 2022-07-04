@@ -10,6 +10,12 @@ extension UIViewController {
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         present(alertController, animated: true)
     }
+    
+    func confirm(message: String) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alertController, animated: true)
+    }
 }
 //
 //extension UIImage {
