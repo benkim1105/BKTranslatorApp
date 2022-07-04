@@ -18,7 +18,8 @@ struct DevViewModel {
     init() {
         rows.append(RowItem(title: "Main", action: { vc in
             let newVC = BKMainTabBarController()
-            vc.navigationController?.pushViewController(newVC, animated: true)
+            newVC.modalPresentationStyle = .fullScreen
+            vc.present(newVC, animated: true)
         }))
         
         rows.append(RowItem(title: "New", action: { vc in
@@ -34,10 +35,8 @@ struct DevViewModel {
         }))
         
         rows.append(RowItem(title: "Archive", action: { vc in
-            let sentences = [BKSentence(sentence: "Nice to meet you", translation: "만나서 반갑습니다.", sentenceLanguage: .en, translationLanguage: .ko)]
-            let viewModel = BKFactory.shared.saveViewModel(sentences: sentences)
-            let saveVC = BKSaveViewController(viewModel: viewModel)
-            vc.navigationController?.pushViewController(saveVC, animated: true)
+            let archiveVC = BKArchiveViewController()
+            vc.navigationController?.pushViewController(archiveVC, animated: true)
         }))
         
 //        rows.append(RowItem(title: "play audio", action: { vc in
