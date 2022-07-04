@@ -128,9 +128,12 @@ class BKNewViewController: UIViewController, BKNewViewProtocol {
         .disposed(by: disposeBag)
         
         saveButton.rx.tap.bind { _ in
-            let todo = "여기서 저장하기"
-            print("저장하기")
+            let sentences = self.viewModel.savedSentences.value
+            let viewModel = BKFactory.shared.saveViewModel(sentences: sentences)
+            let saveVC = BKSaveViewController(viewModel: viewModel)
+            self.navigationController?.pushViewController(saveVC, animated: true)
         }
+        .disposed(by: disposeBag)
     }
     
     //MARK: init
@@ -145,12 +148,7 @@ class BKNewViewController: UIViewController, BKNewViewProtocol {
     
     //MARK: UI
     var saveButton: UIBarButtonItem = {
-        let view = UIBarButtonItem(
-            image: UIImage(systemName: "plus"),
-            style: .done,
-            target: nil,
-            action: nil)
-        
+        let view = UIBarButtonItem(title: "Save", style: .plain, target: nil, action: nil)
         return view
     }()
     

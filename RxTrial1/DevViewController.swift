@@ -16,6 +16,11 @@ struct DevViewModel {
     var rows = [RowItem]()
     
     init() {
+        rows.append(RowItem(title: "Main", action: { vc in
+            let newVC = BKMainTabBarController()
+            vc.navigationController?.pushViewController(newVC, animated: true)
+        }))
+        
         rows.append(RowItem(title: "New", action: { vc in
             let newVC = BKNewViewController(viewModel: BKFactory.shared.newViewModel())
             vc.navigationController?.pushViewController(newVC, animated: true)
@@ -28,10 +33,17 @@ struct DevViewModel {
             vc.navigationController?.pushViewController(saveVC, animated: true)
         }))
         
-        rows.append(RowItem(title: "play audio", action: { vc in
-            let playerVC = BKPlayerViewController()
-            vc.navigationController?.pushViewController(playerVC, animated: true)
+        rows.append(RowItem(title: "Archive", action: { vc in
+            let sentences = [BKSentence(sentence: "Nice to meet you", translation: "만나서 반갑습니다.", sentenceLanguage: .en, translationLanguage: .ko)]
+            let viewModel = BKFactory.shared.saveViewModel(sentences: sentences)
+            let saveVC = BKSaveViewController(viewModel: viewModel)
+            vc.navigationController?.pushViewController(saveVC, animated: true)
         }))
+        
+//        rows.append(RowItem(title: "play audio", action: { vc in
+//            let playerVC = BKPlayerViewController()
+//            vc.navigationController?.pushViewController(playerVC, animated: true)
+//        }))
     }
 }
 
