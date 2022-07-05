@@ -95,21 +95,22 @@ class BKSaveViewModelTest: XCTestCase {
     }
     
     class MockDataService: BKDataServiceProtocol {
-        func save<E>(_ element: E, type: String) -> Observable<ServerId> where E : Decodable, E : Encodable {
-            Call.stack.append("save:" + type)
+        
+        func save<E>(_ element: E, type: DataElementType) -> Observable<ServerId> where E : Decodable, E : Encodable {
+            Call.stack.append("save:" + type.rawValue)
             return Observable.just("")
         }
         
-        func saveList<E>(_ list: [E], type: String) -> Observable<[ServerId]> where E : Decodable, E : Encodable {
-            Call.stack.append("saveList:" + type)
+        func saveList<E>(_ list: [E], type: DataElementType) -> Observable<[ServerId]> where E : Decodable, E : Encodable {
+            Call.stack.append("saveList:" + type.rawValue)
             return Observable.just([])
         }
         
-        func getElement<E>(type: String, id: String) -> Observable<E?> where E : Decodable, E : Encodable {
+        func getElement<E>(type: DataElementType, id: String) -> Observable<E?> where E : Decodable, E : Encodable {
             fatalError()
         }
         
-        func getList<E>(type: String, startToken: String?, count: Int?, order: [(String, Bool)]?) -> Observable<ListResult<E>> where E : Decodable, E : Encodable {
+        func getList<E>(type: DataElementType, startToken: String?, count: Int?, order: [(String, OrderDirection)]?) -> Observable<ListResult<E>> where E : Decodable, E : Encodable {
             fatalError()
         }
     }

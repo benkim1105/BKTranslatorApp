@@ -24,3 +24,9 @@ struct BKEpisode: Codable {
     }
     
 }
+
+extension BKEpisode {
+    static var sample: BKEpisode {
+        BKEpisode(id: "id", serverId: "serverId", title: "title", image: "image", timestamp: Date())
+    }
+}

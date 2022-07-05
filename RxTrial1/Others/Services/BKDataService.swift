@@ -15,9 +15,23 @@ enum DataServiceError: Error {
     case internalError
 }
 
+enum DataElementType: String {
+    case Episode
+    case Sentence
+}
+
 struct ListResult<E: Codable> {
     let items: [E]
     let nextStartToken: String?
+}
+
+enum OrderDirection {
+    case asc
+    case desc
+    
+    var value: Bool {
+        self == .asc
+    }
 }
 
 ///사용자가 생산한 데이터를 입출력하는 서비스
@@ -25,16 +39,16 @@ protocol BKDataServiceProtocol {
     typealias ServerId = String
     
     ///Element 하나를 서버에 저장한다.
-    func save<E>(_ element: E, type: String) -> Observable<ServerId> where E: Codable
+    func save<E>(_ element: E, type: DataElementType) -> Observable<ServerId> where E: Codable
     
     ///Element 목록을 서버에 저장한다.
-    func saveList<E>(_ list: [E], type: String) -> Observable<[ServerId]> where E: Codable
+    func saveList<E>(_ list: [E], type: DataElementType) -> Observable<[ServerId]> where E: Codable
     
     ///Element 하나를 서버에서 가져온다.
-    func getElement<E>(type: String, id: String) -> Observable<E?> where E: Codable
+    func getElement<E>(type: DataElementType, id: String) -> Observable<E?> where E: Codable
     
     ///Element 목록을 서버에서 가져온다.
-    func getList<E>(type: String, startToken: String?, count: Int?, order: [(String, Bool)]?) -> Observable<ListResult<E>> where E: Codable
+    func getList<E>(type: DataElementType, startToken: String?, count: Int?, order: [(String, OrderDirection)]?) -> Observable<ListResult<E>> where E: Codable
 }
 
 ///서버가 없으니 일단 그냥 CoreData 로 구현. 나중에 리모트로 변환
@@ -45,8 +59,8 @@ class BKLocalDataService: BKDataServiceProtocol {
         self.context = managedObjectContext
     }
     
-    func save<E>(_ element: E, type: String) -> Observable<ServerId> where E: Codable {
-        guard let mapper = ElementMapper.init(rawValue: type) else {
+    func save<E>(_ element: E, type: DataElementType) -> Observable<ServerId> where E: Codable {
+        guard let mapper = ElementMapper(type: type) else {
             return Observable.error(DataServiceError.invalidType)
         }
         
@@ -69,8 +83,8 @@ class BKLocalDataService: BKDataServiceProtocol {
         return Observable.just(id)
     }
     
-    func saveList<E>(_ list: [E], type: String) -> Observable<[ServerId]> where E: Codable {
-        guard let mapper = ElementMapper.init(rawValue: type) else {
+    func saveList<E>(_ list: [E], type: DataElementType) -> Observable<[ServerId]> where E: Codable {
+        guard let mapper = ElementMapper(type: type) else {
             return Observable.error(DataServiceError.invalidType)
         }
         
@@ -97,16 +111,17 @@ class BKLocalDataService: BKDataServiceProtocol {
         return Observable.just(serverIds)
     }
     
-    func getElement<E>(type: String, id: String) -> Observable<E?> where E: Codable {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: type)
+    func getElement<E>(type: DataElementType, id: String) -> Observable<E?> where E: Codable {
+        guard let mapper = ElementMapper(type: type) else {
+            return Observable.error(DataServiceError.invalidType)
+        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: mapper.coreDataEntityName)
         request.predicate = NSPredicate(format: "id == %@", id)
         do {
             let result = try context.fetch(request)
             guard let object = result.first else {
                 return Observable.just(nil)
-            }
-            guard let mapper = ElementMapper(rawValue: type) else {
-                return Observable.error(DataServiceError.invalidType)
             }
             
             let element = mapper.getElement(from: object as! NSManagedObject) as! E
@@ -116,9 +131,13 @@ class BKLocalDataService: BKDataServiceProtocol {
         }
     }
     
-    func getList<E>(type: String, startToken: String?, count: Int?, order: [(String, Bool)]? = nil) -> Observable<ListResult<E>> where E : Codable {
+    func getList<E>(type: DataElementType, startToken: String?, count: Int?, order: [(String, OrderDirection)]? = nil) -> Observable<ListResult<E>> where E : Codable {
+
+        guard let mapper = ElementMapper(type: type) else {
+            return Observable.error(DataServiceError.invalidType)
+        }
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: type)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: mapper.coreDataEntityName)
         if let startToken = startToken {
             request.fetchOffset = Int(startToken) ?? 0
         }
@@ -126,14 +145,10 @@ class BKLocalDataService: BKDataServiceProtocol {
             request.fetchLimit = count
         }
         if let order = order {
-            let sortDescriptors = order.map { NSSortDescriptor(key: $0.0, ascending: $0.1) }
+            let sortDescriptors = order.map { NSSortDescriptor(key: $0.0, ascending: $0.1.value) }
             request.sortDescriptors = sortDescriptors
         }
 
-        guard let mapper = ElementMapper(rawValue: type) else {
-            return Observable.error(DataServiceError.invalidType)
-        }
-        
         do {
             let results = try context.fetch(request)
             
@@ -155,12 +170,16 @@ class BKLocalDataService: BKDataServiceProtocol {
     }
 }
 
-
-enum ElementMapper: String {
+/// ViewModel 에서 쓰는 모델과 Persistent 계층의 모델 매핑
+private enum ElementMapper: String {
     case Episode
     case Sentence
     
     typealias ServerId = String
+    
+    init?(type: DataElementType) {
+        self.init(rawValue: type.rawValue)
+    }
     
     var coreDataEntityName: String {
         return self.rawValue

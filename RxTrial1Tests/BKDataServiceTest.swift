@@ -17,7 +17,7 @@ class BKDataServiceTest: XCTestCase {
     
     override func setUp() async throws {
         let exp = XCTestExpectation()
-        let container = NSPersistentContainer(name: "translator")
+        let container = NSPersistentContainer(name: "translatordata")
         container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         container.loadPersistentStores(completionHandler: { [weak self] (storeDescription, error) in
             if let error = error as NSError? {
@@ -38,7 +38,7 @@ class BKDataServiceTest: XCTestCase {
         //when
         let episode = BKEpisode(id: "id", title: "title", image: "image")
 
-        dataService.save(episode, type: "Episode")
+        dataService.save(episode, type: .Episode)
             .subscribe { serverId in
                 XCTAssertNotNil(serverId)
             } onError: { error in
@@ -48,7 +48,7 @@ class BKDataServiceTest: XCTestCase {
             .disposed(by: disposeBag)
            
         //Then
-        dataService.getElement(type: "Episode", id: "id")
+        dataService.getElement(type: .Episode, id: "id")
             .subscribe { (episode: BKEpisode?) in
                 XCTAssertNotNil(episode)
                 print(episode ?? "nil")
@@ -86,7 +86,7 @@ class BKDataServiceTest: XCTestCase {
         }
         
         //when
-        dataService.saveList(sentenceList, type: "Sentence")
+        dataService.saveList(sentenceList, type: .Sentence)
             .subscribe { serverIds in
                 XCTAssertNotNil(serverIds)
                 XCTAssertEqual(10, serverIds.count)
@@ -97,7 +97,7 @@ class BKDataServiceTest: XCTestCase {
             .disposed(by: disposeBag)
            
         //Then
-        dataService.getList(type: "Sentence", startToken: nil, count: nil, order: [("id", true)])
+        dataService.getList(type: .Sentence, startToken: nil, count: nil, order: [("id", .asc)])
             .subscribe { (list: ListResult<BKSentence>) in
                 XCTAssertNotNil(list)
                 print(list)

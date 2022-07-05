@@ -29,3 +29,8 @@ struct BKSentence: Codable {
     }
 }
 
+extension BKSentence {
+    static var sample: BKSentence {
+        BKSentence(id: "id", bookId: "bookId", sentence: "sentence", translation: "translation", sentenceLanguage: .ko, translationLanguage: .en, timestamp: Date(), serverId: "serverId")
+    }
+}

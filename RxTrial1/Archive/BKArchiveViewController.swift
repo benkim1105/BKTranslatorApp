@@ -10,7 +10,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class BKArchiveViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class BKArchiveViewController: UIViewController, BKArchiveViewProtocol, UICollectionViewDelegate, UICollectionViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,10 @@ class BKArchiveViewController: UIViewController, UICollectionViewDelegate, UICol
         view.backgroundColor = .systemBackground
         
         configUI()
+    }
+    
+    func showError(_ message: String) {
+        complain(message: message)
     }
 
     //MARK: ConfigUI

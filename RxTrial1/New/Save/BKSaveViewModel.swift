@@ -125,11 +125,11 @@ class BKSaveModel: BKSaveModelProtocol {
 
     func saveEpisode(id: String, title: String, image: String?) -> Observable<ServerId> {
         let book = BKEpisode(id: id, serverId: nil, title: title, image: image)
-        return dataService.save(book, type: "Episode")
+        return dataService.save(book, type: .Episode)
     }
     
     func saveSentences(_ sentences: [BKSentence]) -> Observable<[ServerId]> {
-        return dataService.saveList(sentences, type: "Sentence")
+        return dataService.saveList(sentences, type: .Sentence)
     }
 
     func saveImage(image: UIImage?, name: String?) -> Observable<RemoteImage?> {

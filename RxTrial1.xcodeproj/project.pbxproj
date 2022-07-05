@@ -35,6 +35,8 @@
 		B5E6CDA328729F7E00C4B84F /* SentenceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6CDA228729F7E00C4B84F /* SentenceCollectionViewCell.swift */; };
 		B5E6CDA62873442D00C4B84F /* VerticalImageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6CDA52873442D00C4B84F /* VerticalImageTextCell.swift */; };
 		B5E6CDA928734A2E00C4B84F /* BKSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6CDA828734A2E00C4B84F /* BKSearchResultViewController.swift */; };
+		B5E78AE328748D3500719DF6 /* BKArchiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E78AE228748D3500719DF6 /* BKArchiveViewModel.swift */; };
+		B5E78AE528748D9700719DF6 /* BKArchiveViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E78AE428748D9700719DF6 /* BKArchiveViewModelTest.swift */; };
 		B5FFBEBA2868A86600A26655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBEB92868A86600A26655 /* AppDelegate.swift */; };
 		B5FFBEBC2868A86600A26655 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FFBEBB2868A86600A26655 /* SceneDelegate.swift */; };
 		B5FFBEC32868A86800A26655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5FFBEC22868A86800A26655 /* Assets.xcassets */; };
@@ -104,6 +106,8 @@
 		B5E6CDA228729F7E00C4B84F /* SentenceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5E6CDA52873442D00C4B84F /* VerticalImageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalImageTextCell.swift; sourceTree = "<group>"; };
 		B5E6CDA828734A2E00C4B84F /* BKSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKSearchResultViewController.swift; sourceTree = "<group>"; };
+		B5E78AE228748D3500719DF6 /* BKArchiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKArchiveViewModel.swift; sourceTree = "<group>"; };
+		B5E78AE428748D9700719DF6 /* BKArchiveViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKArchiveViewModelTest.swift; sourceTree = "<group>"; };
 		B5FFBEB62868A86600A26655 /* RxTrial1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTrial1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FFBEB92868A86600A26655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5FFBEBB2868A86600A26655 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 			children = (
 				B5E6CDA728734A1A00C4B84F /* Search */,
 				B58FB919286C062300894BAF /* BKArchiveViewController.swift */,
+				B5E78AE228748D3500719DF6 /* BKArchiveViewModel.swift */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				B58FB90F286BEFCC00894BAF /* TranslatorViewModelTest.swift */,
 				17C8B3D51940BEE07E42ABE4 /* BKSaveViewModelTest.swift */,
 				B565B3CB2871D3B7007A6B0C /* BKDataServiceTest.swift */,
+				B5E78AE428748D9700719DF6 /* BKArchiveViewModelTest.swift */,
 			);
 			path = RxTrial1Tests;
 			sourceTree = "<group>";
@@ -589,6 +595,7 @@
 				B5FFBF2A286A078A00A26655 /* Sentence.swift in Sources */,
 				B5FFBF1028696DBA00A26655 /* BKNewViewModel.swift in Sources */,
 				B5FFBF122869729900A26655 /* BKFactory.swift in Sources */,
+				B5E78AE328748D3500719DF6 /* BKArchiveViewModel.swift in Sources */,
 				B58FB924286C331F00894BAF /* TextFieldCell.swift in Sources */,
 				B565B3C128703275007A6B0C /* BKEpisode.swift in Sources */,
 				17C8B6A2F84ECC002290E6DE /* BKLocalFileService.swift in Sources */,
@@ -601,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E78AE528748D9700719DF6 /* BKArchiveViewModelTest.swift in Sources */,
 				B58FB910286BEFCC00894BAF /* TranslatorViewModelTest.swift in Sources */,
 				B5FFBED12868A86800A26655 /* TranslatorServiceTest.swift in Sources */,
 				B565B3CC2871D3B7007A6B0C /* BKDataServiceTest.swift in Sources */,
