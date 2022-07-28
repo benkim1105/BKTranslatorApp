@@ -8,7 +8,7 @@
 import Foundation
 
 struct RemoteImage {
-    let name: String
+    let url: String?
     let width: Int
     let height: Int
     let isLocal: Bool

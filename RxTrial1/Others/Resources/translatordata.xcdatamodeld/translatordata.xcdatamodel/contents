@@ -17,8 +17,16 @@
         <attribute name="translation" optional="YES" attributeType="String"/>
         <attribute name="translationLanguage" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="TSentence" representedClassName="TSentence" syncable="YES" codeGenerationType="class">
+        <attribute name="sid" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="USentence" representedClassName="USentence" syncable="YES" codeGenerationType="class">
+        <attribute name="sid" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
-        <element name="Episode" positionX="-63" positionY="-18" width="128" height="104"/>
-        <element name="Sentence" positionX="-54" positionY="-9" width="128" height="149"/>
+        <element name="Episode" positionX="-36" positionY="9" width="128" height="104"/>
+        <element name="TSentence" positionX="0" positionY="45" width="128" height="44"/>
+        <element name="Sentence" positionX="27" positionY="72" width="128" height="149"/>
+        <element name="USentence" positionX="54" positionY="99" width="128" height="44"/>
     </elements>
 </model>

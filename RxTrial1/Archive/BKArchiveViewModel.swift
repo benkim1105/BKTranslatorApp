@@ -9,13 +9,13 @@ import Foundation
 import RxSwift
 
 protocol BKArchiveViewModelProtocol: AnyObject {
-    var episodes: BehaviorSubject<[BKEpisode]> { get set }
-    var sentences: BehaviorSubject<[BKSentence]> { get set }
-    
     func viewDidLoad()
 }
 
 protocol BKArchiveViewProtocol: AnyObject {
+    var episodes: BehaviorSubject<[BKEpisode]> { get set }
+    var sentences: BehaviorSubject<[BKSentence]> { get set }
+    
     func showError(_ message: String)
 }
 
@@ -29,9 +29,6 @@ class BKArchiveViewModel: BKArchiveViewModelProtocol {
     let model: BKArchiveModelProtocol
     weak var view: BKArchiveViewProtocol?
     
-    var episodes: BehaviorSubject<[BKEpisode]> = BehaviorSubject(value: [])
-    var sentences: BehaviorSubject<[BKSentence]> = BehaviorSubject(value: [])
-    
     init(model: BKArchiveModelProtocol) {
         self.model = model
     }
@@ -42,8 +39,8 @@ class BKArchiveViewModel: BKArchiveViewModelProtocol {
         
         Observable.zip(episodesObservable, sentencesObservable)
             .subscribe { [weak self] (episodes, sentences) in
-                self?.episodes.onNext(episodes)
-                self?.sentences.onNext(sentences)
+                self?.view?.episodes.onNext(episodes)
+                self?.view?.sentences.onNext(sentences)
             } onError: { [weak self] error in
                 self?.view?.showError("Fail to load data.")
             } onCompleted: {

@@ -35,11 +35,14 @@ class BKArchiveViewModelTest: XCTestCase {
         //then
         XCTAssertTrue(Call.stack.contains { $0 == "getList:Episode" })
         XCTAssertTrue(Call.stack.contains { $0 == "getList:Sentence" })
-        XCTAssertTrue(try viewModel.sentences.value().count > 0)
-        XCTAssertTrue(try viewModel.episodes.value().count > 0)
+        XCTAssertTrue(try mockView.sentences.value().count > 0)
+        XCTAssertTrue(try mockView.episodes.value().count > 0)
     }
     
     class MockArchiveView: BKArchiveViewProtocol {
+        var episodes: BehaviorSubject<[BKEpisode]> = BehaviorSubject(value: [])
+        var sentences: BehaviorSubject<[BKSentence]> = BehaviorSubject(value: [])
+        
         func showError(_ message: String) {
             
         }
@@ -57,6 +60,8 @@ class BKArchiveViewModelTest: XCTestCase {
                 return Observable.just(mockEpisodes as! ListResult<E>)
             case .Sentence:
                 return Observable.just(mockSentences as! ListResult<E>)
+            case .USentence:
+                return Observable.just(ListResult(items: [], nextStartToken: nil))
             }
         }
         
@@ -69,6 +74,10 @@ class BKArchiveViewModelTest: XCTestCase {
         }
         
         func saveList<E>(_ list: [E], type: DataElementType) -> Observable<[ServerId]> where E : Decodable, E : Encodable {
+            fatalError()
+        }
+        
+        func getList<E>(type: DataElementType, idList: [LocalId]) -> Observable<ListResult<E>> where E : Decodable, E : Encodable {
             fatalError()
         }
     }

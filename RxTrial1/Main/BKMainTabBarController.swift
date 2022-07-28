@@ -19,7 +19,7 @@ class BKMainTabBarController: UITabBarController {
         let translatorNaviVC = UINavigationController(rootViewController: translatorVC)
         translatorNaviVC.tabBarItem = UITabBarItem(title: "New", image: UIImage(systemName: "square.and.pencil"), tag: 0)
         
-        let archiveVC = BKArchiveViewController()
+        let archiveVC = BKArchiveViewController(viewModel: BKFactory.shared.archiveViewModel())
         let archiveNaviVC = UINavigationController(rootViewController: archiveVC)
         archiveNaviVC.tabBarItem = UITabBarItem(title: "Archive", image: UIImage(systemName: "archivebox"), tag: 1)
         

@@ -95,6 +95,10 @@ class BKSaveViewModelTest: XCTestCase {
     }
     
     class MockDataService: BKDataServiceProtocol {
+        func getList<E>(type: DataElementType, idList: [LocalId]) -> Observable<ListResult<E>> where E : Decodable, E : Encodable {
+            fatalError()
+        }
+        
         
         func save<E>(_ element: E, type: DataElementType) -> Observable<ServerId> where E : Decodable, E : Encodable {
             Call.stack.append("save:" + type.rawValue)
@@ -113,13 +117,14 @@ class BKSaveViewModelTest: XCTestCase {
         func getList<E>(type: DataElementType, startToken: String?, count: Int?, order: [(String, OrderDirection)]?) -> Observable<ListResult<E>> where E : Decodable, E : Encodable {
             fatalError()
         }
+        
     }
     
     class MockRemoteService: BKRemoteFileServiceProtocol {
         func saveImageFile(image: UIImage?, name: String, quality: CGFloat) -> Observable<RemoteImage?> {
             Call.stack.append("saveImageFile")
             
-            return Observable.just(RemoteImage(name: name, width: 100, height: 100, isLocal: true))
+            return Observable.just(RemoteImage(url: name, width: 100, height: 100, isLocal: true))
         }
     }
 }

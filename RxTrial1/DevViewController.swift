@@ -35,8 +35,42 @@ struct DevViewModel {
         }))
         
         rows.append(RowItem(title: "Archive", action: { vc in
-            let archiveVC = BKArchiveViewController()
+            let archiveVC = BKArchiveViewController(viewModel: BKFactory.shared.archiveViewModel())
             vc.navigationController?.pushViewController(archiveVC, animated: true)
+        }))
+        
+        rows.append(RowItem(title: "음성인식", action: { vc in
+            let rehearsalVC = BKRehearsalViewController()
+            vc.navigationController?.pushViewController(rehearsalVC, animated: true)
+        }))
+        
+        rows.append(RowItem(title: "Text Diff", action: { vc in
+            let differVC = BKDifferViewController()
+            vc.navigationController?.pushViewController(differVC, animated: true)
+        }))
+        
+        rows.append(RowItem(title: "Background Player", action: { vc in
+            let directory = BKFactory.shared.localFileService.directory(with: .mp3)!
+            
+            do {
+                var idxStub = 0
+                let items = try FileManager.default.contentsOfDirectory(atPath: directory.path)
+                    .filter { $0.hasSuffix(".mp3") }
+                    .map { directory.appendingPathComponent($0) }
+                    .map({ url -> BKPlayerItem in
+                        idxStub = idxStub + 1
+                        return BKPlayerItem(sentence: "sample sentence \(idxStub)", translation: "이건 샘플 번역 \(idxStub)", ttsURL: url)
+                    })
+                
+                let player = BKFactory.shared.player()
+                let viewModel = BKPlayerViewModel(player: player)
+                viewModel.loadItems(items: items)
+                
+                let playerVC = BKPlayerViewController(viewModel: viewModel)
+                vc.navigationController?.pushViewController(playerVC, animated: true)
+            } catch {
+                print(error)
+            }
         }))
         
 //        rows.append(RowItem(title: "play audio", action: { vc in

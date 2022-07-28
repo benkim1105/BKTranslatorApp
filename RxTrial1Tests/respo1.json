@@ -1,0 +1,213 @@
+{
+  "sentences": [
+    {
+      "text": {
+        "content": "오늘 또 다시 일을 시작해보자.",
+        "beginOffset": 0
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "text": {
+        "content": "오늘",
+        "beginOffset": 0
+      },
+      "partOfSpeech": {
+        "tag": "NOUN",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "NOT_PROPER",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 1,
+        "label": "ADVMOD"
+      },
+      "lemma": "오늘"
+    },
+    {
+      "text": {
+        "content": "또 다시",
+        "beginOffset": 3
+      },
+      "partOfSpeech": {
+        "tag": "VERB",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "NOT_PROPER",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 2,
+        "label": "RCMOD"
+      },
+      "lemma": "또 다시"
+    },
+    {
+      "text": {
+        "content": "일",
+        "beginOffset": 8
+      },
+      "partOfSpeech": {
+        "tag": "NOUN",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "NOT_PROPER",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 6,
+        "label": "DOBJ"
+      },
+      "lemma": "일"
+    },
+    {
+      "text": {
+        "content": "을",
+        "beginOffset": 9
+      },
+      "partOfSpeech": {
+        "tag": "PRT",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "ACCUSATIVE",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "NOT_PROPER",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 2,
+        "label": "PRT"
+      },
+      "lemma": "을"
+    },
+    {
+      "text": {
+        "content": "시작",
+        "beginOffset": 11
+      },
+      "partOfSpeech": {
+        "tag": "NOUN",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "NOT_PROPER",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 6,
+        "label": "AUX"
+      },
+      "lemma": "시작"
+    },
+    {
+      "text": {
+        "content": "해",
+        "beginOffset": 13
+      },
+      "partOfSpeech": {
+        "tag": "AFFIX",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "AUXILIARY",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "NOT_PROPER",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 4,
+        "label": "SUFF"
+      },
+      "lemma": "해"
+    },
+    {
+      "text": {
+        "content": "보자",
+        "beginOffset": 14
+      },
+      "partOfSpeech": {
+        "tag": "VERB",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FINAL_ENDING",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "IMPERATIVE",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "NOT_PROPER",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 6,
+        "label": "ROOT"
+      },
+      "lemma": "보자"
+    },
+    {
+      "text": {
+        "content": ".",
+        "beginOffset": 16
+      },
+      "partOfSpeech": {
+        "tag": "PUNCT",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "NOT_PROPER",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 6,
+        "label": "P"
+      },
+      "lemma": "."
+    }
+  ],
+  "language": "ko"
+}

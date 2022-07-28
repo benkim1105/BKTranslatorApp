@@ -1,0 +1,188 @@
+{
+  "sentences": [
+    {
+      "text": {
+        "content": "Let's get back to work today",
+        "beginOffset": 0
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "text": {
+        "content": "Let",
+        "beginOffset": 0
+      },
+      "partOfSpeech": {
+        "tag": "VERB",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "IMPERATIVE",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "PROPER_UNKNOWN",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 0,
+        "label": "ROOT"
+      },
+      "lemma": "Let"
+    },
+    {
+      "text": {
+        "content": "'s",
+        "beginOffset": 3
+      },
+      "partOfSpeech": {
+        "tag": "PRON",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "PROPER_UNKNOWN",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 2,
+        "label": "NSUBJ"
+      },
+      "lemma": "'s"
+    },
+    {
+      "text": {
+        "content": "get",
+        "beginOffset": 6
+      },
+      "partOfSpeech": {
+        "tag": "VERB",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "PROPER_UNKNOWN",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 0,
+        "label": "CCOMP"
+      },
+      "lemma": "get"
+    },
+    {
+      "text": {
+        "content": "back",
+        "beginOffset": 10
+      },
+      "partOfSpeech": {
+        "tag": "ADV",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "PROPER_UNKNOWN",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 2,
+        "label": "ADVMOD"
+      },
+      "lemma": "back"
+    },
+    {
+      "text": {
+        "content": "to",
+        "beginOffset": 15
+      },
+      "partOfSpeech": {
+        "tag": "ADP",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "NUMBER_UNKNOWN",
+        "person": "PERSON_UNKNOWN",
+        "proper": "PROPER_UNKNOWN",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 3,
+        "label": "PREP"
+      },
+      "lemma": "to"
+    },
+    {
+      "text": {
+        "content": "work",
+        "beginOffset": 18
+      },
+      "partOfSpeech": {
+        "tag": "NOUN",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "SINGULAR",
+        "person": "PERSON_UNKNOWN",
+        "proper": "PROPER_UNKNOWN",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 4,
+        "label": "POBJ"
+      },
+      "lemma": "work"
+    },
+    {
+      "text": {
+        "content": "today",
+        "beginOffset": 23
+      },
+      "partOfSpeech": {
+        "tag": "NOUN",
+        "aspect": "ASPECT_UNKNOWN",
+        "case": "CASE_UNKNOWN",
+        "form": "FORM_UNKNOWN",
+        "gender": "GENDER_UNKNOWN",
+        "mood": "MOOD_UNKNOWN",
+        "number": "SINGULAR",
+        "person": "PERSON_UNKNOWN",
+        "proper": "PROPER_UNKNOWN",
+        "reciprocity": "RECIPROCITY_UNKNOWN",
+        "tense": "TENSE_UNKNOWN",
+        "voice": "VOICE_UNKNOWN"
+      },
+      "dependencyEdge": {
+        "headTokenIndex": 2,
+        "label": "TMOD"
+      },
+      "lemma": "today"
+    }
+  ],
+  "language": "en"
+}

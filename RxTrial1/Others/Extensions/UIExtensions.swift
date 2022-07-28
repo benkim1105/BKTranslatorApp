@@ -11,9 +11,11 @@ extension UIViewController {
         present(alertController, animated: true)
     }
     
-    func confirm(message: String) {
+    func confirm(message: String, handler: (() -> Void)? = nil) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            handler?()
+        }))
         present(alertController, animated: true)
     }
 }

@@ -18,6 +18,7 @@ enum DataServiceError: Error {
 enum DataElementType: String {
     case Episode
     case Sentence
+    case USentence
 }
 
 struct ListResult<E: Codable> {
@@ -37,6 +38,7 @@ enum OrderDirection {
 ///사용자가 생산한 데이터를 입출력하는 서비스
 protocol BKDataServiceProtocol {
     typealias ServerId = String
+    typealias LocalId = String
     
     ///Element 하나를 서버에 저장한다.
     func save<E>(_ element: E, type: DataElementType) -> Observable<ServerId> where E: Codable
@@ -49,6 +51,9 @@ protocol BKDataServiceProtocol {
     
     ///Element 목록을 서버에서 가져온다.
     func getList<E>(type: DataElementType, startToken: String?, count: Int?, order: [(String, OrderDirection)]?) -> Observable<ListResult<E>> where E: Codable
+    
+    ///idList 의 Element List 를 가져온다.
+    func getList<E>(type: DataElementType, idList: [LocalId]) -> Observable<ListResult<E>>
 }
 
 ///서버가 없으니 일단 그냥 CoreData 로 구현. 나중에 리모트로 변환
@@ -168,12 +173,39 @@ class BKLocalDataService: BKDataServiceProtocol {
             return Observable.error(error)
         }
     }
+    
+    func getList<E>(type: DataElementType, idList: [LocalId]) -> Observable<ListResult<E>> where E : Decodable, E : Encodable {
+        
+        guard let mapper = ElementMapper(type: type) else {
+            return Observable.error(DataServiceError.invalidType)
+        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: mapper.coreDataEntityName)
+        
+        request.predicate = NSPredicate(format: "id IN %@", idList)
+        
+        do {
+            let results = try context.fetch(request)
+            
+            var elements: [E] = []
+            for result in results {
+                let element = mapper.getElement(from: result as! NSManagedObject) as! E
+                elements.append(element)
+            }
+            
+            let listResult = ListResult(items: elements, nextStartToken: nil)
+            return Observable.just(listResult)
+        } catch {
+            return Observable.error(error)
+        }
+    }
 }
 
 /// ViewModel 에서 쓰는 모델과 Persistent 계층의 모델 매핑
 private enum ElementMapper: String {
     case Episode
     case Sentence
+    case USentence
     
     typealias ServerId = String
     
@@ -191,6 +223,8 @@ private enum ElementMapper: String {
             return map(episode: fromElement as! BKEpisode, toObject: toObject as! Episode)
         case .Sentence:
             return map(sentence: fromElement as! BKSentence, toObject: toObject as! Sentence)
+        case .USentence:
+            return map(usentence: fromElement as! String, toObject: toObject as! USentence)
         }
     }
     
@@ -200,7 +234,14 @@ private enum ElementMapper: String {
             return BKEpisode(episode: object as! Episode)
         case .Sentence:
             return BKSentence(sentence: object as! Sentence)
+        case .USentence:
+            return (object as! USentence).sid ?? ""
         }
+    }
+    
+    private func map(usentence: String, toObject: USentence) -> ServerId {
+        toObject.sid = usentence
+        return usentence
     }
     
     private func map(episode: BKEpisode, toObject: Episode) -> ServerId {

@@ -66,12 +66,12 @@ class BKSaveViewModel: BKSaveViewModelProtocol {
         }
         
         let imageName = image != nil ? "\(bookId).jpg" : nil
-        let bookObserver = model.saveEpisode(id: bookId, title: title, image: imageName)
+        let episodeObserver = model.saveEpisode(id: bookId, title: title, image: imageName)
         let sentencesObserver = model.saveSentences(sentences)
         let ttsObserver = model.makeTTS(with: sentences)
         let imageObserver = model.saveImage(image: image, name: imageName)
         
-        Observable.zip(bookObserver, sentencesObserver, ttsObserver, imageObserver)
+        Observable.zip(episodeObserver, sentencesObserver, ttsObserver, imageObserver)
             .subscribe { [weak self] (book, sentences, urls, image) in
                 self?.view?.showProgress.accept(false)
                 self?.view?.onSaveCompletion()

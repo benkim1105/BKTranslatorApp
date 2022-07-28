@@ -27,6 +27,11 @@ class BKFactory {
         dataService = BKLocalDataService(managedObjectContext: appDelegate.persistentContainer.viewContext)
     }
     
+    func player() -> BKPlayer {
+        let player = BKPlayer()
+        return player
+    }
+    
     func newViewModel() -> BKNewViewModel {
         let model = BKTranslatorService(api: api)
         let viewModel = BKNewViewModel(model: model)
@@ -36,6 +41,12 @@ class BKFactory {
     func saveViewModel(sentences: [BKSentence]) -> BKSaveViewModel {
         let model = BKSaveModel(api: api, localFileService: localFileService, dataService: dataService, remoteFileService: remoteFileService)
         let viewModel = BKSaveViewModel(sentences: sentences, model: model)
+        return viewModel
+    }
+    
+    func archiveViewModel() -> BKArchiveViewModel {
+        let model = BKArchivewModel(dataService: dataService)
+        let viewModel = BKArchiveViewModel(model: model)
         return viewModel
     }
 }

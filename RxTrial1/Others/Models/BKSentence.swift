@@ -8,14 +8,14 @@
 import Foundation
 
 struct BKSentence: Codable {
-    let id: String?
-    let bookId: String?
-    let sentence: String
-    let translation: String
-    let sentenceLanguage: Language
-    let translationLanguage: Language
-    let timestamp: Date?
-    let serverId: String?
+    var id: String?
+    var bookId: String?
+    var sentence: String
+    var translation: String
+    var sentenceLanguage: Language
+    var translationLanguage: Language
+    var timestamp: Date?
+    var serverId: String?
 
     internal init(id: String? = UUID().uuidString, bookId: String? = nil, sentence: String, translation: String, sentenceLanguage: Language, translationLanguage: Language, timestamp: Date? = nil, serverId: String? = nil) {
         self.id = id
@@ -27,6 +27,7 @@ struct BKSentence: Codable {
         self.timestamp = timestamp
         self.serverId = serverId
     }
+    
 }
 
 extension BKSentence {

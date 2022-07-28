@@ -7,10 +7,20 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
+
+struct VerticalImageTextCellModel {
+    var imageUrl: String?
+    var title: String?
+}
 
 class VerticalImageTextCell: UICollectionViewCell {
     static let identifier = "VerticalImageTextCell"
     
+    func configure(with viewModel: VerticalImageTextCellModel) {
+        self.imageView.sd_setImage(with: URL(string: viewModel.imageUrl ?? ""))
+        self.textView.text = viewModel.title
+    }
     
     let imageView: UIImageView = {
         let view = UIImageView(frame: .zero)

@@ -29,8 +29,8 @@ class BKRemoteFileService: BKRemoteFileServiceProtocol {
                 return Disposables.create()
             }
             
-            _ = self?.fileService.saveFile(type: .cover, data: data, name: name)
-            observer.onNext(RemoteImage(name: name, width: Int(image?.size.width ?? 0), height: Int(image?.size.height ?? 0), isLocal: true))
+            let url = self?.fileService.saveFile(type: .cover, data: data, name: name)
+            observer.onNext(RemoteImage(url: url?.absoluteString, width: Int(image?.size.width ?? 0), height: Int(image?.size.height ?? 0), isLocal: true))
             
             observer.onCompleted()
             return Disposables.create()
